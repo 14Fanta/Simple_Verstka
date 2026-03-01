@@ -319,9 +319,20 @@ summary::-webkit-details-marker {
 /* Adaptation */
 
 @media (width <= 1440px) {
-
 	.hero-images {
 		width: 50%;
+	}
+}
+
+@media (width <= 1250px) {
+	.hero::before {
+		display: none;
+	}
+
+	.hero-images {
+		display: flex;
+		justify-content: center;
+		width: 100%;
 	}
 }
 
@@ -378,10 +389,9 @@ summary::-webkit-details-marker {
 		width: 100%;
 	}
 
-
-  .faq{
-    width: 100%;
-  }
+	.faq {
+		width: 100%;
+	}
 
 	.faq::before {
 		display: none;
@@ -397,10 +407,9 @@ summary::-webkit-details-marker {
 		flex-direction: column-reverse;
 	}
 
-  .question-container{
-    width: 100%;
-  }
-
+	.question-container {
+		width: 100%;
+	}
 }
 
 @media (width <= 768px) {
