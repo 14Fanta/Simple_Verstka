@@ -2,22 +2,17 @@
 
 .hero {
 	position: relative;
-	padding-top: 80px;
 	margin-bottom: 140px;
 }
 
-.hero::after {
-	content: '';
-	position: absolute;
+.hero::before {
 	bottom: 106px;
-	z-index: -1;
-	display: inline-block;
-	background: url('../images/svg/decor_icon_large.svg') repeat-x;
 	width: 100%;
-	height: 48px;
 }
 
 .hero-container {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	gap: 28px;
 }
@@ -33,6 +28,12 @@
 }
 
 .hero p.hero-images__btn.p {
+	-webkit-transition:
+		opacity 0.3s,
+		background-color 0.2s;
+	-o-transition:
+		opacity 0.3s,
+		background-color 0.2s;
 	transition:
 		opacity 0.3s,
 		background-color 0.2s;
@@ -59,6 +60,12 @@ div.hero-content p.text {
 
 .button {
 	display: inline-block;
+	-webkit-transition:
+		opacity 0.3s,
+		background-color 0.3s;
+	-o-transition:
+		opacity 0.3s,
+		background-color 0.3s;
 	transition:
 		opacity 0.3s,
 		background-color 0.3s;
@@ -91,6 +98,8 @@ section.hero.section a {
 	position: absolute;
 	top: 62px;
 	left: 50%;
+	-webkit-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
 	transform: translateX(-50%);
 	font-weight: 400;
 	font-size: 16px;
@@ -104,13 +113,22 @@ section.hero.section a {
 }
 
 .news-container {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	gap: 28px;
 }
 
 .card {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
 	flex-direction: column;
+	-webkit-box-flex: 1;
+	-ms-flex: 1 1 25%;
 	flex: 1 1 25%;
 	border: 1px solid #d3cbd9;
 	max-width: 284px;
@@ -155,7 +173,11 @@ section.hero.section a {
 }
 
 .card a {
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
 	display: inline-flex;
+	-webkit-box-align: baseline;
+	-ms-flex-align: baseline;
 	align-items: baseline;
 	gap: 8px;
 }
@@ -166,10 +188,21 @@ section.hero.section a {
 	width: 22px;
 	height: 9px;
 	background: url(../images/svg/arrow.svg);
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: -webkit-transform 0.3s;
+	-o-transition: transform 0.3s;
 	transition: transform 0.3s;
+	transition:
+		transform 0.3s,
+		-webkit-transform 0.3s;
+	transition:
+		transform 0.3s,
+		-webkit-transform 0.3s;
 }
 
 .card > footer.card-footer a:hover::after {
+	-webkit-transform: translateX(3px);
+	-ms-transform: translateX(3px);
 	transform: translateX(3px);
 }
 
@@ -183,19 +216,17 @@ section.hero.section a {
 }
 
 .faq-container {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-align: start;
+	-ms-flex-align: start;
+	align-items: flex-start;
 	gap: 30px;
 }
 
 .faq::before {
-	content: '';
-	position: absolute;
 	top: 215px;
-	z-index: -1;
-	background: url('../images/svg/декор 2.svg') repeat-x;
-	display: inline-block;
-	width: calc(50% - 250px);
-	height: 48px;
 }
 
 .question-title {
@@ -206,8 +237,13 @@ section.hero.section a {
 }
 
 .question-container {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	gap: 20px;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
 	flex-direction: column;
 }
 
@@ -220,6 +256,8 @@ details::details-content {
 	display: block;
 	block-size: 0;
 	overflow: hidden;
+	-webkit-transition: all 0.5s allow-discrete;
+	-o-transition: all 0.5s allow-discrete;
 	transition: all 0.5s allow-discrete;
 }
 
@@ -230,6 +268,8 @@ details[open]::details-content {
 }
 
 details[open] summary::after {
+	-webkit-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
 	transform: rotate(180deg);
 }
 
@@ -238,13 +278,22 @@ details > p {
 }
 
 summary {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
 	justify-content: space-between;
 	gap: 12px;
 	list-style: none;
 	padding: 21px;
 	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
 	user-select: none;
 }
 
@@ -255,7 +304,8 @@ summary.question-title {
 summary::after {
 	content: '';
 	display: inline-block;
-  flex-shrink:0;
+	-ms-flex-negative: 0;
+	flex-shrink: 0;
 	width: 17px;
 	height: 22px;
 	background: url('../images/svg/arrow-down.svg') no-repeat center / cover;
@@ -269,6 +319,7 @@ summary::-webkit-details-marker {
 /* Adaptation */
 
 @media (width <= 1440px) {
+
 	.hero-images {
 		width: 50%;
 	}
@@ -280,7 +331,12 @@ summary::-webkit-details-marker {
 	}
 
 	.hero-container {
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
 		flex-direction: column;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
 		align-items: center;
 	}
 
@@ -298,16 +354,22 @@ summary::-webkit-details-marker {
 	}
 
 	.news {
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
 		justify-content: center;
 	}
 
 	.news-container {
+		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
 		gap: 20px;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
 		justify-content: center;
 	}
 
 	.card {
+		-ms-flex-preferred-size: 50%;
 		flex-basis: 50%;
 		max-width: 350px;
 	}
@@ -316,17 +378,40 @@ summary::-webkit-details-marker {
 		width: 100%;
 	}
 
+
+  .faq{
+    width: 100%;
+  }
+
 	.faq::before {
 		display: none;
 	}
 
 	.faq-container {
+		-webkit-box-align: center;
+		-ms-flex-align: center;
 		align-items: center;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: reverse;
+		-ms-flex-direction: column-reverse;
 		flex-direction: column-reverse;
 	}
+
+  .question-container{
+    width: 100%;
+  }
+
 }
 
 @media (width <= 768px) {
+	.hero {
+		margin-bottom: 70px;
+	}
+
+	.hero-images {
+		width: 100%;
+	}
+
 	.hero-content {
 		max-width: 410px;
 	}
@@ -347,6 +432,10 @@ summary::-webkit-details-marker {
 		padding-top: 60px;
 	}
 
+	.hero-images {
+		width: 100%;
+	}
+
 	.hero h1 {
 		font-size: 42px;
 	}
@@ -361,14 +450,13 @@ summary::-webkit-details-marker {
 		padding: 10px;
 	}
 
-  h2.questions-title {
-    font-size: 38px;
-  }
-  
-  details summary.question-title {
-		font-size: 18px;
-	}  
+	h2.questions-title {
+		font-size: 38px;
+	}
 
+	details summary.question-title {
+		font-size: 18px;
+	}
 }
 
 @media (width <= 414px) {

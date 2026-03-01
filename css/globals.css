@@ -9,11 +9,17 @@ html {
 *,
 *::after,
 *::before {
+	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
 body {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
 	flex-direction: column;
 	min-height: 100vh;
 	min-width: 375px;
@@ -35,6 +41,7 @@ li {
 img {
 	max-width: 100%;
 	height: auto;
+	-o-object-fit: cover;
 	object-fit: cover;
 }
 
@@ -103,12 +110,26 @@ a {
 	font-size: 36px;
 }
 
+.article-mb {
+	margin-bottom: 80px;
+}
+
 .text-sub {
 	font-weight: 300;
 	font-size: 14px;
 	line-height: 4%;
 	color: #858e8a;
 	margin-bottom: 8px;
+}
+
+.decor::before {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	background: url('../images/svg/decor_icon.svg') repeat-x;
+	display: inline-block;
+	width: calc(50% - 250px);
+	height: 48px;
 }
 
 .text {
@@ -164,7 +185,7 @@ summary:focus-visible {
 	}
 
 	h1.title-large {
-		font-size: 38px;
+		font-size: 30px;
 	}
 
 	h2.title-large {
